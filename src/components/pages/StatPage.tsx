@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 
 const StatPage = () => {
@@ -12,7 +12,7 @@ const StatPage = () => {
     }else{
         setFriendPage('Jamey')
     }
-  })
+  }, [])
   
   return (
     <div>

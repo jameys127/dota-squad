@@ -1,3 +1,4 @@
+import RankTable from "../../misc/RankTable"
 
 const Home = () => {
   return (
@@ -5,6 +6,9 @@ const Home = () => {
         <h1 className="text-[#d40000] font-bold">
             wassup
         </h1>
+        <div className="">
+            <RankTable />
+        </div>
     </div>
   )
 }
