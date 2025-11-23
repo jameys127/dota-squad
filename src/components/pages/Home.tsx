@@ -1,7 +1,7 @@
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex justify-center">
         <h1 className="text-[#d40000] font-bold">
             wassup
         </h1>
