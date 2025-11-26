@@ -3,11 +3,12 @@ import Header from "./fixed/Header"
 
 const Layout = () => {
   return (
-    <div className="min-h-screen w-full relative bg-[radial-gradient(125%_125%_at_50%_100%,#000000_40%,#350136_100%)]">
-        <div className="z-10">
-            <Header />
-            <Outlet />
-        </div>
+    <div className="flex flex-col h-screen w-screen relative bg-[radial-gradient(125%_125%_at_50%_100%,#000000_40%,#350136_100%)]">
+      <Header />
+      {/* apparently flex-1 makes it fill the remaining vertical space */}
+      <div className="flex-1">
+        <Outlet />
+      </div>
     </div>
   )
 }

@@ -50,7 +50,7 @@ const RankTable = () => {
     setPage(newPage);
   }
   return (
-    <>
+    <div className="flex flex-col">
     <TableContainer component={Paper} sx={{backgroundColor: 'transparent'}}>
     <Table sx={{width: 450, minHeight: 621, background: "#2222229c", borderRadius: "1rem"}} aria-label="simple table">
         <TableHead>
@@ -88,7 +88,7 @@ const RankTable = () => {
       page={page}
       onPageChange={handleChangePage}
     />
-    </>
+    </div>
   )
 }
 
