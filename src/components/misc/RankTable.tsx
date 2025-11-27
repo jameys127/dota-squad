@@ -52,7 +52,7 @@ const RankTable = () => {
   return (
     <div className="flex flex-col">
     <TableContainer component={Paper} sx={{backgroundColor: 'transparent'}}>
-    <Table sx={{width: 450, minHeight: 621, background: "#2222229c", borderRadius: "1rem"}} aria-label="simple table">
+    <Table sx={{width: 450, minHeight: 300, background: "#2222229c", borderRadius: "1rem"}} aria-label="simple table">
         <TableHead>
         <TableRow>
             <TableCell sx={{color: "white"}}>Rank</TableCell>
@@ -70,6 +70,7 @@ const RankTable = () => {
                 <TableCell sx={{color: "white"}}>
                     <div className="flex items-center">
                     <img className='w-20' src={row.img} alt="rank medal" />
+                    &nbsp;
                     {row.name}
                     </div>
                 </TableCell>

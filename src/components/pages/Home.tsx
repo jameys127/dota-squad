@@ -27,24 +27,45 @@ const Home = () => {
   });
 
   if(isPending){
-    return <div><CircularProgress /></div>
+    return <div className="flex items-center justify-center p-3 w-full h-full">
+            <div className="flex min-w-1/2 h-full justify-center items-center">
+              <CircularProgress />
+            </div>
+            <div className="justify-center items-center min-w-1/2 h-full flex flex-col">
+              <RankTable />
+            </div>
+           </div>
   }
   if(error){
     console.log("Wassup")
-    return <p className="text-white">Error grabbing data</p>
+    return <div className="flex items-center justify-center p-3 w-full h-full">
+            <div className="flex min-w-1/2 h-full justify-center items-center">
+              <h1 className="text-white">Error grabbing data. Please try again</h1>
+            </div>
+            <div className="justify-center items-center min-w-1/2 h-full flex flex-col">
+              <RankTable />
+            </div>
+           </div>
   }
   if(!data){
-    return <p className="text-white">No data found</p>
+    return <div className="flex items-center justify-center p-3 w-full h-full">
+            <div className="flex min-w-1/2 h-full justify-center items-center">
+              <h1 className="text-white">No data found</h1>
+            </div>
+            <div className="justify-center items-center min-w-1/2 h-full flex flex-col">
+              <RankTable />
+            </div>
+           </div>
   }
 
   return (
-    <div className="flex items-center justify-center p-3 h-full">
-        <div className="flex flex-col w-1/2 h-full justify-center items-center gap-40">
+    <div className="flex items-center justify-center p-3 w-full h-full">
+        <div className="flex flex-col min-w-1/2 h-full justify-center items-center gap-30">
           <h1 className="flex items-center text-white text-[2rem] font-[Cinzel] font-bold">Jamey&nbsp;-&nbsp;<img src={data.jamey.profile.avatarmedium} alt="avatar"/>&nbsp;{data.jamey.profile.personaname}&nbsp;-&nbsp;<img className="w-20" src={RankMedal(data.jamey.rank_tier)} alt="rank" /></h1>
           <h1 className="flex items-center text-white text-[2rem] font-[Cinzel] font-bold">Gabe&nbsp;-&nbsp;<img src={data.gabe.profile.avatarmedium} alt="avatar"/>&nbsp;{data.gabe.profile.personaname}&nbsp;-&nbsp;<img className="w-20" src={RankMedal(data.gabe.rank_tier)} alt="rank" /></h1>
           <h1 className="flex items-center text-white text-[2rem] font-[Cinzel] font-bold">Max&nbsp;-&nbsp;<img src={data.max.profile.avatarmedium} alt="avatar"/>&nbsp;{data.max.profile.personaname}&nbsp;-&nbsp;<img className="w-20" src={RankMedal(data.max.rank_tier)} alt="rank" /></h1>
         </div>
-        <div className="justify-center items-center w-1/2 h-full flex flex-col">
+        <div className="justify-center items-center min-w-1/2 h-full flex flex-col">
             <RankTable />
         </div>
     </div>
